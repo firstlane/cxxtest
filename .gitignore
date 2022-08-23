@@ -12,3 +12,11 @@ TestClang_*
 TestGppPy_*
 *.dSYM
 TestCpp_*
+
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+.vscode
+
