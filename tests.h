@@ -18,6 +18,28 @@ public:
         TS_ASSERT_EQUALS("foo", tmp);
     }
 
+    void testBDD() {
+        GSTEPS("Calc*") { // "Calc Addition.Add two numbers"
+        auto result = 0;
+
+        Given("I created a calculator with value {n}") = [&](int n) {
+            Calculator calc{n};
+
+            Given("I have entered {n} into the calculator") = [&](int n) {
+            calc.push(n);
+            };
+
+            When("I press add") = [&] {
+            result = calc.add();
+            };
+
+            Then("The result should be {expected}") = [&](int expected) {
+            EXPECT_EQ(expected, result);
+            };
+        };
+        }
+    }
+
     void testAddition() {
         TS_ASSERT_EQUALS(1 + 1, 2);
         TS_ASSERT_EQUALS(2 + 2, 5);

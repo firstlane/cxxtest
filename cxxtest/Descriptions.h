@@ -34,6 +34,7 @@ public:
     virtual const char *suiteName() const = 0;
 
     virtual void run() = 0;
+    virtual void runParameterized() = 0;
     virtual bool setUp() = 0;
     virtual bool tearDown() = 0;
 
